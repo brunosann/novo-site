@@ -1,0 +1,31 @@
+.sectionHeader {
+  background-image: url("../../assets/images/header-section-min.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  article {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      color: var(--white);
+      font-size: 3.5rem;
+
+      span {
+        color: var(--red-500);
+      }
+    }
+
+    p {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+  }
+}

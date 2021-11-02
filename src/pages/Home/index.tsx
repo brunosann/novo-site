@@ -1,6 +1,7 @@
 import { Header } from "../../components/Header"
 
 import styles from "./styles.module.scss";
+import { SectionAbout } from "../../components/SectionAbout";
 
 export const Home = () => {
   return (
@@ -12,6 +13,8 @@ export const Home = () => {
           <p>Full Stack - Freelancer Dev</p>
         </article>
       </section>
+
+      <SectionAbout />
     </main>
   )
 }

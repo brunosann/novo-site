@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaGithubSquare, FaLinkedin, FaTwitch, FaTwitterSquare } from "react-icons/fa";
 
 import logoImg from "../../assets/images/logo.svg";
@@ -6,6 +6,12 @@ import styles from "./styles.module.scss";
 
 export const Header = () => {
   const [isMenuBarOpen, setIsMenuBarOpen] = useState(false);
+
+  useEffect(() => {
+    const body = document.querySelector("body")
+    if (isMenuBarOpen && body) body.style.overflow = 'hidden';
+    else if (!isMenuBarOpen && body) body.style.overflow = ''
+  }, [isMenuBarOpen])
 
   return (
     <header>

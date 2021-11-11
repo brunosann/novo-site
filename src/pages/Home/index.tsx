@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import { SectionAbout } from "../../components/SectionAbout";
 import { SectionPortfolio } from "../../components/SectionPortfolio";
 import { SectionContact } from "../../components/SectionContact";
+import { Footer } from "../../components/Footer";
 
 export const Home = () => {
   return (
@@ -14,6 +15,12 @@ export const Home = () => {
           <h1>Hi! I'm <span>Bruno</span> Teixeira</h1>
           <p>Full Stack - Freelancer Dev</p>
         </article>
+
+        <div className={styles.scrollDowns}>
+          <div className={styles.mousey}>
+            <div className={styles.scroller}></div>
+          </div>
+        </div>
       </section>
 
       <SectionAbout />
@@ -21,6 +28,8 @@ export const Home = () => {
       <SectionPortfolio />
 
       <SectionContact />
+
+      <Footer />
     </main>
   )
 }

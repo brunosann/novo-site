@@ -3,6 +3,7 @@ import { Header } from "../../components/Header"
 import styles from "./styles.module.scss";
 import { SectionAbout } from "../../components/SectionAbout";
 import { SectionPortfolio } from "../../components/SectionPortfolio";
+import { SectionContact } from "../../components/SectionContact";
 
 export const Home = () => {
   return (
@@ -18,6 +19,8 @@ export const Home = () => {
       <SectionAbout />
 
       <SectionPortfolio />
+
+      <SectionContact />
     </main>
   )
 }

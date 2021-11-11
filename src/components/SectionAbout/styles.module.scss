@@ -5,7 +5,7 @@
   overflow: hidden;
 
   h2 {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .contentAbout {
@@ -87,6 +87,7 @@
           font-size: 1rem;
           padding: 0.5rem 0;
           transition: filter 0.2s;
+          height: 40px;
 
           &:hover {
             filter: brightness(0.8);
@@ -161,6 +162,7 @@
     padding: 2rem 0;
 
     h2 {
+      font-size: 1.75rem;
       text-align: center;
     }
   }

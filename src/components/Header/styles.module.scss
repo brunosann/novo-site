@@ -1,0 +1,149 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+}
+
+.brand {
+  border: none;
+  background: none;
+}
+
+.ul {
+  display: flex;
+  gap: 2rem;
+  font-weight: 800;
+  color: var(--white);
+
+  .socials {
+    display: none;
+  }
+}
+
+.buttonLink {
+  border: none;
+  background: none;
+  font-weight: 800;
+  color: var(--white);
+  transition: filter 0.3s;
+
+  &:hover {
+    filter: brightness(0.7);
+  }
+}
+
+.menuBar {
+  width: 40px;
+  height: 30px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border: none;
+  background: none;
+
+  & > div {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--white);
+    transition: transform 0.4s;
+  }
+
+  &.active {
+    justify-content: center;
+  }
+
+  &.active > div:first-child {
+    transform: skewY(135deg);
+  }
+
+  &.active > div:nth-child(2) {
+    transform: skewY(-135deg);
+  }
+
+  &.active > div:last-child {
+    display: none;
+  }
+}
+
+@keyframes entryBarMenu {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .ul {
+    display: none;
+    z-index: 1;
+
+    &.open {
+      display: flex;
+      border-radius: 0.5rem 0 0 0.5rem;
+      background-color: #2e2cb4;
+      flex-direction: column;
+      position: absolute;
+      right: 0;
+      top: 6rem;
+      width: 80%;
+      align-items: flex-end;
+      padding: 5rem 1rem 1rem 1rem;
+      height: calc(100vh - 6rem);
+      box-shadow: -14px 1px 29px -11px rgba(0, 0, 0, 0.47);
+      overflow: hidden;
+      gap: 4rem;
+      animation: entryBarMenu 0.4s forwards;
+    }
+
+    &.open::before {
+      content: "";
+      display: block;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background-color: #4141d7;
+      position: absolute;
+      z-index: -1;
+      right: -50%;
+      top: -15%;
+    }
+
+    &.open::after {
+      content: "";
+      display: block;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-color: #4141d7;
+      position: absolute;
+      z-index: -1;
+      bottom: -15%;
+      left: -11%;
+    }
+
+    &.open .socials {
+      display: flex;
+      gap: 1rem;
+
+      a {
+        font-size: 2.25rem;
+      }
+    }
+  }
+
+  .buttonLink.open {
+    letter-spacing: 0.25rem;
+  }
+
+  .menuBar {
+    display: flex;
+  }
+}

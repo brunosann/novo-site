@@ -1,0 +1,200 @@
+.sectionAbout {
+  padding: 5rem 0;
+  background-color: var(--blue-800);
+  color: var(--white);
+  overflow: hidden;
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .contentAbout {
+    nav {
+      ul {
+        margin: 2rem 0;
+        display: flex;
+        gap: 3rem;
+
+        li {
+          transition: 0.3s color;
+          transition: 0.3s all;
+          border-bottom: 2px solid;
+          border-color: transparent;
+
+          button {
+            background: none;
+            color: currentColor;
+            border: none;
+            padding: 1rem 1rem;
+          }
+
+          &:hover {
+            color: var(--red-500);
+            border-color: var(--red-500);
+          }
+        }
+
+        li.active {
+          color: var(--red-500);
+          border-bottom: 2px solid;
+        }
+      }
+    }
+
+    @keyframes entryAbouts {
+      to {
+        transform: translate3d(0px, 0, 0);
+        opacity: 1;
+      }
+    }
+
+    .aboutMe {
+      display: none;
+      gap: 1rem;
+      transform: translate3d(60px, 0, 0);
+      opacity: 0;
+
+      &.active {
+        display: flex;
+        animation: entryAbouts 0.5s forwards;
+      }
+
+      .boxImg {
+        flex: 1;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .boxText {
+        flex: 1;
+
+        h4 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          margin: 1rem 0;
+        }
+
+        button {
+          width: 9rem;
+          background-color: var(--purple-500);
+          border: none;
+          border-radius: 0.25rem;
+          color: var(--white);
+          font-size: 1rem;
+          padding: 0.5rem 0;
+          transition: filter 0.2s;
+          height: 40px;
+
+          &:hover {
+            filter: brightness(0.8);
+          }
+        }
+      }
+    }
+
+    .skills {
+      transform: translate3d(60px, 0, 0);
+      opacity: 0;
+      display: none;
+
+      &.active {
+        display: block;
+        animation: entryAbouts 0.5s forwards;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+
+        li {
+          display: grid;
+          grid-template-columns: 130px 1fr;
+          align-items: center;
+          font-weight: 600;
+
+          .bar {
+            width: 420px;
+            height: 35px;
+            border: 2px solid #ff1d42;
+            border-radius: 18.5px;
+            overflow: hidden;
+
+            .barProgress {
+              background: linear-gradient(90deg, #ff074d 22.71%, #ff5e28 90.94%);
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .services {
+      transform: translate3d(60px, 0, 0);
+      opacity: 0;
+      display: none;
+      text-align: justify;
+
+      &.active {
+        display: block;
+        animation: entryAbouts 0.5s forwards;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .contentAbout {
+    nav {
+      ul {
+        justify-content: center;
+        margin: 1rem 0 !important;
+      }
+    }
+  }
+
+  .sectionAbout {
+    padding: 2rem 0;
+
+    h2 {
+      font-size: 1.75rem;
+      text-align: center;
+    }
+  }
+
+  .aboutMe {
+    flex-direction: column;
+
+    button {
+      width: 100% !important;
+    }
+
+    .boxText {
+      h4 {
+        text-align: center;
+      }
+
+      p {
+        text-align: justify;
+      }
+    }
+  }
+
+  .skills {
+    ul {
+      li {
+        grid-template-columns: 1fr !important;
+        justify-items: center;
+
+        .bar {
+          width: 300px !important;
+        }
+      }
+    }
+  }
+}

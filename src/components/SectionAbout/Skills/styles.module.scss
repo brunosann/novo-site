@@ -1,0 +1,63 @@
+.skills {
+  @keyframes entryAbouts {
+    to {
+      transform: translate3d(0px, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  transform: translate3d(60px, 0, 0);
+  opacity: 0;
+  display: none;
+
+  &.active {
+    display: grid;
+    animation: entryAbouts 0.5s forwards;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      background-color: var(--blue-700);
+      border-radius: 4px;
+      color: #fff;
+      text-align: center;
+      font-weight: 700;
+
+      .boxIcon {
+        svg {
+          font-size: 60px;
+          fill: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .skills {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+
+      li {
+        width: 80px;
+        height: 80px;
+
+        .boxIcon {
+          svg {
+            font-size: 50px;
+          }
+        }
+      }
+    }
+  }
+}

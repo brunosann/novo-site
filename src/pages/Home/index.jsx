@@ -1,4 +1,4 @@
-import { Header } from "../../components/Header"
+import { Header } from "../../components/Header";
 
 import styles from "./styles.module.scss";
 import { SectionAbout } from "../../components/SectionAbout";
@@ -12,8 +12,10 @@ export const Home = () => {
       <section className={styles.sectionHeader}>
         <Header />
         <article>
-          <h1>Hi! I'm <span>Bruno</span> Teixeira</h1>
-          <p>Full Stack - Freelancer Dev</p>
+          <h1>
+            Hi! I'm <span>Bruno</span> Teixeira
+          </h1>
+          <p>Dev Full Stack - Freelancer</p>
         </article>
 
         <div className={styles.scrollDowns}>
@@ -31,5 +33,5 @@ export const Home = () => {
 
       <Footer />
     </main>
-  )
-}
+  );
+};

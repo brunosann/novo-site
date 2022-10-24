@@ -95,18 +95,6 @@
         }
       }
     }
-
-    .services {
-      transform: translate3d(60px, 0, 0);
-      opacity: 0;
-      display: none;
-      text-align: justify;
-
-      &.active {
-        display: block;
-        animation: entryAbouts 0.5s forwards;
-      }
-    }
   }
 }
 

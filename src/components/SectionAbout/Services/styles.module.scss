@@ -1,0 +1,41 @@
+.services {
+  @keyframes entryAbouts {
+    to {
+      transform: translate3d(0px, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  transform: translate3d(60px, 0, 0);
+  opacity: 0;
+  display: none;
+  text-align: justify;
+  gap: 2rem;
+
+  &.active {
+    display: flex;
+    animation: entryAbouts 0.5s forwards;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    gap: 1rem;
+    background-color: var(--blue-700);
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+
+    svg {
+      font-size: 50px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .services {
+    flex-direction: column;
+  }
+}

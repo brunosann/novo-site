@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./styles.module.scss";
 import bannerAboutImg from "../../assets/images/image-about.png";
 import { Skills } from "./Skills";
+import { Services } from "./Services";
 
 export const SectionAbout = () => {
   const [menuActive, setMenuActive] = useState("aboutMe");
@@ -56,41 +57,14 @@ export const SectionAbout = () => {
                 <br />
                 Atuou a 2 anos e meio como Desenvolvedor Full Stack e Front End.
               </p>
-              <a target="_blank" href="/currículo-bruno.pdf">Baixar CV</a>
+              <a target="_blank" href="/currículo-bruno.pdf">
+                Baixar CV
+              </a>
             </article>
           </article>
 
           <Skills menuActive={menuActive} />
-
-          <article
-            className={`${styles.services} ${
-              menuActive == "services" && styles.active
-            }`}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quia
-            quos est pariatur necessitatibus nostrum enim quaerat odit,
-            perspiciatis maiores vitae temporibus at nam quasi optio assumenda
-            eveniet sint neque. Sed iusto nulla cupiditate laboriosam sapiente
-            enim pariatur itaque saepe placeat perspiciatis. In vero laudantium
-            mollitia perspiciatis fuga aut sed, maiores labore voluptatem
-            accusamus illum repellat esse odio temporibus eligendi eveniet
-            reiciendis enim repellendus aspernatur facilis blanditiis. Maiores
-            quo pariatur sequi, rem fugiat tenetur sint, tempora quos labore
-            cupiditate ratione quasi odio cum atque sit. Veritatis dolore
-            maiores odit assumenda quos quidem incidunt facere blanditiis sint
-            ut perspiciatis voluptas porro, eaque id! Fuga excepturi distinctio
-            sed alias quam impedit pariatur nam. Quos, quidem debitis. Sunt
-            veniam quo tempore laborum voluptatem repellat accusamus dolorem
-            nihil aliquam cum qui placeat inventore dolorum sapiente perferendis
-            rerum illum ratione voluptas optio hic, voluptatum odio. Saepe
-            tempore repudiandae magnam, quam rerum ad maxime placeat in
-            accusantium impedit. Illum, quis dolorem! Harum placeat itaque
-            possimus earum ea debitis dicta accusamus beatae voluptatibus vel
-            nam, voluptatem incidunt voluptatum soluta sapiente laboriosam ipsa
-            minus reiciendis repellendus corrupti ab, ipsum, perspiciatis quae.
-            Vitae consequuntur, cupiditate inventore sunt, temporibus voluptatum
-            debitis numquam ad sed quae fugit saepe suscipit cum illum?
-          </article>
+          <Services menuActive={menuActive} />
         </article>
       </div>
     </section>

@@ -1,17 +1,34 @@
-import { useEffect, useState } from "react";
-import { FaGithubSquare, FaLinkedin, FaTwitch, FaTwitterSquare } from "react-icons/fa";
+import { useContext, useEffect, useState } from "react";
+import {
+  FaGithubSquare,
+  FaLinkedin,
+  FaTwitch,
+  FaTwitterSquare,
+} from "react-icons/fa";
 
 import logoImg from "../../assets/images/logo.svg";
+import { GlobalContext } from "../../contexts/GlobalStorage";
 import styles from "./styles.module.scss";
 
 export const Header = () => {
   const [isMenuBarOpen, setIsMenuBarOpen] = useState(false);
+  const { setMenuActive } = useContext(GlobalContext);
+
+  const handleSectionLink = (e) => {
+    e.preventDefault();
+    const target = e.target.dataset.target;
+    const menuToActivate = e.target.dataset.menuActive;
+    const element = document.querySelector(target);
+    if (menuToActivate) setMenuActive(menuToActivate);
+    setIsMenuBarOpen(false);
+    element.scrollIntoView();
+  };
 
   useEffect(() => {
-    const body = document.querySelector("body")
-    if (isMenuBarOpen && body) body.style.overflow = 'hidden';
-    else if (!isMenuBarOpen && body) body.style.overflow = ''
-  }, [isMenuBarOpen])
+    const body = document.querySelector("body");
+    if (isMenuBarOpen && body) body.style.overflow = "hidden";
+    else if (!isMenuBarOpen && body) body.style.overflow = "";
+  }, [isMenuBarOpen]);
 
   return (
     <header>
@@ -21,7 +38,9 @@ export const Header = () => {
             <img src={logoImg} alt="logo" />
           </button>
           <button
-            className={`${styles.menuBar} ${isMenuBarOpen ? styles.active : ""}`}
+            className={`${styles.menuBar} ${
+              isMenuBarOpen ? styles.active : ""
+            }`}
             onClick={() => setIsMenuBarOpen(!isMenuBarOpen)}
           >
             <div></div>
@@ -30,32 +49,67 @@ export const Header = () => {
           </button>
           <ul className={`${styles.ul} ${isMenuBarOpen ? styles.open : ""}`}>
             <li>
-              <button
-                className={`${styles.buttonLink} ${isMenuBarOpen ? styles.open : ""}`}
+              <a
+                href="#portfolio"
+                data-target="#portfolio"
+                className={`${styles.buttonLink} ${
+                  isMenuBarOpen ? styles.open : ""
+                }`}
+                onClick={handleSectionLink}
               >
                 Portfólio
-              </button>
+              </a>
             </li>
             <li>
-              <button
-                className={`${styles.buttonLink} ${isMenuBarOpen ? styles.open : ""}`}
+              <a
+                href="#sobre"
+                data-target="#about"
+                data-menu-active="aboutMe"
+                className={`${styles.buttonLink} ${
+                  isMenuBarOpen ? styles.open : ""
+                }`}
+                onClick={handleSectionLink}
               >
                 Sobre
-              </button>
+              </a>
             </li>
             <li>
-              <button
-                className={`${styles.buttonLink} ${isMenuBarOpen ? styles.open : ""}`}
+              <a
+                href="#skills"
+                data-target="#about"
+                data-menu-active="skills"
+                className={`${styles.buttonLink} ${
+                  isMenuBarOpen ? styles.open : ""
+                }`}
+                onClick={handleSectionLink}
               >
                 Habilidades
-              </button>
+              </a>
             </li>
             <li>
-              <button
-                className={`${styles.buttonLink} ${isMenuBarOpen ? styles.open : ""}`}
+              <a
+                href="#skills"
+                data-target="#about"
+                data-menu-active="services"
+                className={`${styles.buttonLink} ${
+                  isMenuBarOpen ? styles.open : ""
+                }`}
+                onClick={handleSectionLink}
+              >
+                Serviços
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                data-target="#contact"
+                className={`${styles.buttonLink} ${
+                  isMenuBarOpen ? styles.open : ""
+                }`}
+                onClick={handleSectionLink}
               >
                 Contato
-              </button>
+              </a>
             </li>
             <li className={styles.socials}>
               <a

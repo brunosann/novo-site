@@ -79,6 +79,9 @@
         }
 
         a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           width: 9rem;
           background-color: var(--purple-500);
           border: none;
@@ -131,6 +134,10 @@
 
       p {
         text-align: justify;
+      }
+
+      a {
+        width: 100% !important;
       }
     }
   }

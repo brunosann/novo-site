@@ -12,7 +12,7 @@ export const SectionContact = () => {
   const [message, setMessage] = useState("");
 
   return (
-    <section className={styles.sectionContact}>
+    <section id="contact" className={styles.sectionContact}>
       <div className="container">
         <h2 className={styles.title}>Vamos Conversar</h2>
 

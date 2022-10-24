@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useContext } from "react";
 import styles from "./styles.module.scss";
 import bannerAboutImg from "../../assets/images/image-about.png";
 import { Skills } from "./Skills";
 import { Services } from "./Services";
+import { GlobalContext } from "../../contexts/GlobalStorage";
 
 export const SectionAbout = () => {
-  const [menuActive, setMenuActive] = useState("aboutMe");
+  const { menuActive, setMenuActive } = useContext(GlobalContext);
 
   return (
-    <section className={styles.sectionAbout}>
+    <section id="about" className={styles.sectionAbout}>
       <div className="container">
         <h2>Sobre Mim</h2>
         <article className={styles.contentAbout}>

@@ -56,7 +56,7 @@ export const SectionAbout = () => {
                 <br />
                 Atuou a 2 anos e meio como Desenvolvedor Full Stack e Front End.
               </p>
-              <button>Baixar CV</button>
+              <a target="_blank" href="/currículo-bruno.pdf">Baixar CV</a>
             </article>
           </article>
 

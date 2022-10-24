@@ -1,9 +1,7 @@
 import { useState } from "react";
-
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import styles from "./styles.module.scss";
 import imgEnvelope from "../../assets/images/envelope.png";
-import imgLinkedin from "../../assets/images/linkedin.png";
-import imgSmartphone from "../../assets/images/smartphone.png";
 
 export const SectionContact = () => {
   const [name, setName] = useState("");
@@ -66,18 +64,30 @@ export const SectionContact = () => {
             <button className="btn-primary">Enviar</button>
           </form>
           <div className={styles.socials}>
-            <article className={` ${styles.border}`}>
+            <a
+              target="_blank"
+              href="mailto:contato@devteixeira.com.br?subject=Contato DevTeixeira"
+              className={` ${styles.border}`}
+            >
               <img src={imgEnvelope} alt="envelope" />
-              <p>workdevteixeira@gmail.com</p>
-            </article>
-            <article className={` ${styles.border}`}>
-              <img src={imgSmartphone} alt="celular" />
-              <p>44 99999 9999</p>
-            </article>
-            <article className={` ${styles.border}`}>
-              <img src={imgLinkedin} alt="linkedin" />
-              <p>linkedin.com</p>
-            </article>
+              <p>contato@devteixeira.com.br</p>
+            </a>
+            <a
+              target="_blank"
+              href="https://github.com/brunosann"
+              className={` ${styles.border}`}
+            >
+              <FaGithub />
+              <p>Github</p>
+            </a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/bruno-teixeira-920661142/"
+              className={` ${styles.border}`}
+            >
+              <FaLinkedinIn />
+              <p>linkedin</p>
+            </a>
           </div>
         </div>
       </div>

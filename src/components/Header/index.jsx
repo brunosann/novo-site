@@ -11,18 +11,8 @@ import { GlobalContext } from "../../contexts/GlobalStorage";
 import styles from "./styles.module.scss";
 
 export const Header = () => {
-  const [isMenuBarOpen, setIsMenuBarOpen] = useState(false);
-  const { setMenuActive } = useContext(GlobalContext);
-
-  const handleSectionLink = (e) => {
-    e.preventDefault();
-    const target = e.target.dataset.target;
-    const menuToActivate = e.target.dataset.menuActive;
-    const element = document.querySelector(target);
-    if (menuToActivate) setMenuActive(menuToActivate);
-    setIsMenuBarOpen(false);
-    element.scrollIntoView();
-  };
+  const { setMenuActive, isMenuBarOpen, setIsMenuBarOpen, handleSectionLink } =
+    useContext(GlobalContext);
 
   useEffect(() => {
     const body = document.querySelector("body");

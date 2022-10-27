@@ -1,0 +1,17 @@
+{
+  "name": "bruno-site/backend",
+  "autoload": {
+    "psr-4": {
+      "app\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Bruno Teixeira",
+      "email": "bruno_teixeira20@hotmail.com"
+    }
+  ],
+  "require": {
+    "pecee/simple-router": "4.3.7.2"
+  }
+}

@@ -2,6 +2,9 @@
 
 use Pecee\SimpleRouter\SimpleRouter as Route;
 use Pecee\Http\Request;
+use app\controllers\ContactController;
+
+Route::post('/contact', [ContactController::class, 'store']);
 
 Route::get('/not-found', function () {
   response()->httpCode(404)->json(['message' => 'page not found']);

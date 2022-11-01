@@ -1,0 +1,70 @@
+<style>
+  * {
+    font-family: sans-serif;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  header h3 {
+    color: #6ca0b5;
+  }
+
+  section {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  section article {
+    flex: 1;
+  }
+
+  section article:first-child div {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ddd;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .title {
+    color: #6ca0b5;
+    font-size: 1.15rem;
+  }
+
+  @media (max-width: 576px) {
+    section {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<header>
+  <h3>Contato Site</h3>
+</header>
+
+<section>
+  <article>
+    <div>
+      <p class="title">Nome</p>
+      <p>{{name}}</p>
+    </div>
+    <div>
+      <p class="title">Email</p>
+      <p>{{email}}</p>
+    </div>
+    <div>
+      <p class="title">Assunto</p>
+      <p>{{subject}}</p>
+    </div>
+  </article>
+  <article>
+    <div>
+      <p class="title">Mensagem</p>
+      <p>{{message}}</p>
+    </div>
+  </article>
+</section>

@@ -90,6 +90,11 @@
           filter: brightness(0.8);
         }
       }
+
+      .errorSubmit {
+        color: var(--red-500);
+        font-size: 0.85rem;
+      }
     }
 
     .socials {

@@ -19,14 +19,13 @@ class Mail
 
   public function config()
   {
-    $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $this->mail->SMTPDebug = SMTP::DEBUG_OFF;
     $this->mail->isSMTP();
     $this->mail->Host = $_ENV['MAIL_HOST'];
     $this->mail->SMTPAuth = true;
     $this->mail->Username = $_ENV['MAIL_USERNAME'];
     $this->mail->Password = $_ENV['MAIL_PASSWORD'];
-    // $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $this->mail->SMTPSecure = $_ENV['MAIL_ENCRYPTION'];
     $this->mail->Port = $_ENV['MAIL_PORT'];
 
     $this->mail->setFrom($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME']);
